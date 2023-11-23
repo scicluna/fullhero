@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "20.5.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.0",
+    "libraryName": "fullhero",
+    "libraryId": "aaf4e586-e42f-4ca2-bf57-5183491c10db",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "fullhero",
+    "solutionShortDescription": "fullhero description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
