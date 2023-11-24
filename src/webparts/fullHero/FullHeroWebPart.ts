@@ -29,6 +29,9 @@ export default class FullHeroWebPart extends BaseClientSideWebPart<FullHeroProps
         height: this.properties.height
       }
     );
+    document.querySelectorAll('.CanvasZone').forEach((element: Element) => {
+      (element as HTMLElement).style.maxWidth = '100%';
+    });
     ReactDom.render(element, this.domElement);
   }
 
