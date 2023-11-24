@@ -32,12 +32,27 @@ export default class FullHeroWebPart extends BaseClientSideWebPart<FullHeroProps
     //HACKY FULL SCREEN WIDTH SOLUTION -- REALLY REALLY HACKY WOW
     document.querySelectorAll('.CanvasZone').forEach((element: Element) => {
       (element as HTMLElement).style.maxWidth = '100%';
+      (element as HTMLElement).style.margin = '0';
+      (element as HTMLElement).style.padding = '0';
     });
     document.querySelectorAll('.CanvasSection').forEach((element: Element) => {
       (element as HTMLElement).style.maxWidth = '100%';
+      (element as HTMLElement).style.margin = '0';
+      (element as HTMLElement).style.padding = '0';
     });
     document.querySelectorAll('.ControlZone').forEach((element: Element) => {
       (element as HTMLElement).style.maxWidth = '100%';
+      (element as HTMLElement).style.margin = '0';
+      (element as HTMLElement).style.padding = '0';
+    });
+    document.querySelectorAll('.l_e_8474018e').forEach((element: Element) => {
+      (element as HTMLElement).style.margin = '0';
+      (element as HTMLElement).style.padding = '0';
+    });
+    document.querySelectorAll('.CanvasControlToolbar').forEach((element: Element) => {
+      (element as HTMLElement).style.margin = '0';
+      (element as HTMLElement).style.padding = '0';
+      (element as HTMLElement).style.left = '0';
     });
     //BACK TO NORMAL
     ReactDom.render(element, this.domElement);

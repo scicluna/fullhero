@@ -5,7 +5,6 @@ import { FullHeroProps } from '../FullHeroWebPart';
 export default function FullHero({title, titleBackground, titleColor, titlePosition, image, height}: FullHeroProps) {
 
   const sectionStyle = image ? { 
-    transform: 'translateX(-18.15%)',
     backgroundImage: `url(${image.fileAbsoluteUrl})`, 
     backgroundSize: 'cover', 
     backgroundPosition: 'center' 
