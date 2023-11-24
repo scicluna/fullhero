@@ -29,9 +29,17 @@ export default class FullHeroWebPart extends BaseClientSideWebPart<FullHeroProps
         height: this.properties.height
       }
     );
+    //HACKY FULL SCREEN WIDTH SOLUTION -- REALLY REALLY HACKY WOW
     document.querySelectorAll('.CanvasZone').forEach((element: Element) => {
       (element as HTMLElement).style.maxWidth = '100%';
     });
+    document.querySelectorAll('.CanvasSection').forEach((element: Element) => {
+      (element as HTMLElement).style.maxWidth = '100%';
+    });
+    document.querySelectorAll('.ControlZone').forEach((element: Element) => {
+      (element as HTMLElement).style.maxWidth = '100%';
+    });
+    //BACK TO NORMAL
     ReactDom.render(element, this.domElement);
   }
 

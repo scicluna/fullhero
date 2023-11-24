@@ -5,6 +5,7 @@ import { FullHeroProps } from '../FullHeroWebPart';
 export default function FullHero({title, titleBackground, titleColor, titlePosition, image, height}: FullHeroProps) {
 
   const sectionStyle = image ? { 
+    transform: 'translateX(-18.15%)',
     backgroundImage: `url(${image.fileAbsoluteUrl})`, 
     backgroundSize: 'cover', 
     backgroundPosition: 'center' 
@@ -16,7 +17,7 @@ export default function FullHero({title, titleBackground, titleColor, titlePosit
   const heightStyle = height === 'short' ? 'h-64' : height === 'medium' ? 'h-80' : 'h-96';
 
   return (
-    <section className={`w-screen -translate-x-32 bg-red-300 ${heightStyle} flex relative`} style={sectionStyle}>
+    <section className={`w-full bg-red-300 ${heightStyle} flex relative`} style={sectionStyle}>
       <h1 className={`p-4 bg-opacity-10 text-5xl rounded-xl absolute w-fit ${titlePositionStyle} ${titleBackgroundStyle} ${titleColorStyle}`}>{title}</h1>
     </section>
   );
