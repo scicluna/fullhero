@@ -12,7 +12,7 @@ export type FullHeroProps = {
   titlePosition: "left" | "right";
   titleBackground: "dark" | "light";
   image: IFilePickerResult;
-  height: "short" | "medium" | "tall";
+  height: "short" | "medium" | "tall" | "full";
 }
 
 export default class FullHeroWebPart extends BaseClientSideWebPart<FullHeroProps> {
@@ -29,7 +29,7 @@ export default class FullHeroWebPart extends BaseClientSideWebPart<FullHeroProps
         height: this.properties.height
       }
     );
-    //HACKY FULL SCREEN WIDTH SOLUTION -- REALLY REALLY HACKY WOW
+    //PUTRID FULL-WIDTH HACK
     document.querySelectorAll('.CanvasZone').forEach((element: Element) => {
       (element as HTMLElement).style.maxWidth = '100%';
       (element as HTMLElement).style.margin = '0';
@@ -143,7 +143,8 @@ export default class FullHeroWebPart extends BaseClientSideWebPart<FullHeroProps
                   options: [
                     { key: 'short', text: 'Short' },
                     { key: 'medium', text: 'Medium' },
-                    { key: 'tall', text: 'Tall' }
+                    { key: 'tall', text: 'Tall' },
+                    { key: 'full', text: 'Full' }
                   ],
                   selectedKey: 'medium'
                 })
