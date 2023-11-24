@@ -17,30 +17,23 @@ const postcss = require("gulp-postcss");
 const atimport = require("postcss-import");
 const purgecss = require("@fullhuman/postcss-purgecss");
 const tailwind = require("tailwindcss");
-const tailwindcss = build.subTask(
-  "tailwindcss",
-  function (gulp, buildOptions, done) {
-    gulp
-      .src("src/webparts/fullHero/assets/global.css")
-      .pipe(
-        postcss([
-          atimport(),
-          tailwind("./tailwind.config.js"),
-          ...(buildOptions.args.ship
-            ? [
-              purgecss({
-                content: ["src/**/**/*.tsx", "src/**/**/**/*.tsx"],
-                defaultExtractor: (content) =>
-                  content.match(/[\w-/:]+(?<!:)/g) || [],
-              }),
-            ]
-            : []),
-        ])
-      )
-      .pipe(gulp.dest("dist/assets"));
-    done();
-  }
-);
+
+const tailwindcss = build.subTask("tailwindcss", function (gulp, buildOptions, done) {
+  gulp.src("src/webparts/fullHero/assets/global.css")
+    .pipe(
+      postcss([
+        atimport(),
+        tailwind("./tailwind.config.js"),
+        purgecss({
+          content: ["src/**/*.{ts,tsx}"],
+          defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+        })
+      ])
+    )
+    .pipe(gulp.dest("dist/assets"));
+  done();
+});
+
 build.rig.addPreBuildTask(tailwindcss);
 
 build.initialize(require('gulp'));
